@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<xp:this.beforePageLoad><![CDATA[#{javascript:if(config.reload()) {
+	viewScope.put("result", "Reloaded");
+} else {
+	viewScope.put("result", "Failed");
+}}]]></xp:this.beforePageLoad>
+	<xp:this.acl>
+		<xp:acl>
+			<xp:this.entries>
+				<xp:aclEntry
+					fullName="Default"
+					name="Default"
+					right="READER"
+					type="DEFAULT">
+				</xp:aclEntry>
+				<xp:aclEntry
+					name="Anonymous"
+					fullName="Anonymous"
+					right="NOACCESS"
+					type="ANONYMOUS">
+				</xp:aclEntry>
+			</xp:this.entries>
+		</xp:acl>
+	</xp:this.acl>
+	<xp:label
+		value="#{javascript:viewScope.result}"
+		id="label1">
+	</xp:label>
+</xp:view>
