@@ -5,7 +5,7 @@
 This project is a pre-release code to integrate Slack and XPages/Domino environments. Initial version contains;
 
 - Configuration bean,
-- A simple SlashCommand processor for XSnippets Search (/xsnippets)
+- A simple SlashCommand processor for [XSnippets](http://openntf.org/xsnippets) Search (/xsnippets)
 
 ### How it works?
 
@@ -19,6 +19,16 @@ This project is a pre-release code to integrate Slack and XPages/Domino environm
 
 - Register [XPages Slack Community](https://xpages-slack.herokuapp.com/)
 - Use `/xsnippets` command.
+
+### How to use?
+
+- Create NSF on your web server.
+  - Anonymous should be Depositor with Public Read/Write access.
+  - After first use, there will be a Configuration document with your server name.
+  - When needed, use reload.xsp page to refresh configuration bean.
+- Configure Slack
+  - In slack point a new SlackCommand to `http://yourserver/path/to/slack.nsf/command.xsp`
+  - The command should be POST
 
 ### Future?
 
